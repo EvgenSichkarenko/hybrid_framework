@@ -10,11 +10,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 def setup(request):
     options = Options()
     options.page_load_strategy = 'normal'
-    # driver = webdriver.Chrome(options=options)
-    driver = webdriver.Remote(
-        command_executor='http://localhost:4444',
-        options=webdriver.ChromeOptions()
-    )
+    driver = webdriver.Chrome(options=options)
+    # driver = webdriver.Remote(
+    #     command_executor='http://localhost:4444',
+    #     options=webdriver.ChromeOptions()
+    # )
     driver.get("https://www.yatra.com/")
     driver.maximize_window()
     request.cls.driver = driver
